@@ -1,0 +1,26 @@
+Useful information regarding the commands from minecraft-assets and minecraft-data
+
+Useful commands: 
+
+mcData.itemsByName["wheat_seeds"] // returns an item by its itemsByName
+mcAssets.findItemOrBlockByName(items[recipe[0].result.id - 1].name) // return an item by its name
+mcAssets.textureContent["wheat_seeds"].texture; // return an item image by its name
+console.log(mcData.items[772]) // Object containing information for "Wheat"
+console.log(mcData.foods[1003]) // Object containing information for "Pumpkin Pie"
+console.log(mcData.foodsByName['pumpkin_pie']) // Object containing information for "Pumpkin Pie"
+mcData.foodsArray // Array of foods
+console.log(mcData.biomes[20]) // Object containing information for "Windswept Gravelly Hills"
+console.log(mcData.biomesByName['windswept_gravelly_hills']) // Object containing information for "Windswept Gravelly Hills"
+mcData.biomesArray // Array of biomes
+mcData.recipes // Recipes indexed by the resulting item id - ex: console.log(mcData.recipes[31])
+mcData.instruments // Instruments indexed by id - ex: console.log(mcData.instruments[5]) // Returns: { id: 5, name: 'flute' }
+mcData.instrumentsArray // Array of instruments
+mcData.materials // Material types indexed by name - ex: console.log(mcData.materials['mineable/axe']) // Returns: { '702': 2, '707': 4, '712': 12, '717': 6, '722': 8, '727': 9 }
+mcData.mobs // Mobs (passive, neutral, and hostile) indexed by id - console.log(mcData.mobs[30]) // Object containing information for "Ghast"
+mcData.objects // Objects (non-mob entities such as vehicles and projectiles) indexed by id - ex: console.log(mcData.objects[10]) // Object containing information for "Minecart"
+mcData.entities // Entities indexed by id - ex: console.log(mcData.entities[25]) // Object containing information for "Evoker"
+mcData.entitiesByName // Entities indexed by name - ex: console.log(mcData.entitiesByName['evoker']) // Object containing information for "Evoker"
+mcData.entitiesArray // Array of entities
+mcData.enchantments // Enchantments indexed by id - ex: console.log(mcData.enchantments[37]) // Object containing information for "Mending"
+mcData.enchantmentsByName // Enchantments indexed by name - ex: console.log(mcData.enchantmentsByName['mending']) // Object containing information for "Mending"
+mcData.enchantmentsArray // Array of enchantments

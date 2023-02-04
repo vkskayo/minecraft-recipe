@@ -1,0 +1,22 @@
+export const typeDefs = `#graphql
+  type Query {
+    recipes: [String]
+    getOneItem(id: ID!): Item
+    items: [Item!]!
+    getOneRecipe(id: ID!): [[Int]]
+  },
+
+  type Recipe {
+    resultedItemId: ID!
+    resultedItem: Item!
+    inShape: [[ID!]]!
+    url: String!
+  }
+
+  type Item {
+    id: ID!,
+    name: String!,       
+    displayName: String!,
+    stackSize: Int!,
+  }
+`;

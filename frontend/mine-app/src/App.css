@@ -20,7 +20,6 @@ body {
   background-color: #888;
   height: 64px;
   width: 64px;
-  margin: auto;
   border-top: solid 2px black;
   border-left: solid 2px black;
   border-bottom: solid 2px white;
@@ -37,6 +36,11 @@ body {
   width: 32px;
   height: 32px;
   object-fit: cover;
+}
+
+.crafting-table {
+  width: 192px;
+  margin: auto;
 }
 
 @keyframes logo-spin {

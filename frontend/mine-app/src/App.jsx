@@ -1,6 +1,7 @@
 import "./App.css";
 import { useQuery, gql } from "@apollo/client";
 import { useState, useEffect } from "react";
+import { CraftingTable } from "../components/CraftingTable";
 
 function App() {
   const [recipes, setRecipes] = useState([]);
@@ -16,18 +17,19 @@ function App() {
     },
   });
 
-  console.log(recipes);
-
   return (
     <div className="App">
-      <h1 className="mb-4 title">Minecraft - Recipes</h1>
+      <CraftingTable />
+      <h1 className="my-4 title">Minecraft - Recipes</h1>
       <div className="d-flex flex-wrap">
         {recipes
           ? recipes.map((recipeUrl) => {
               if (recipeUrl) {
                 return (
-                  <div className="iventory-bg d-flex justify-content-center align-items-center">
-                    <img className="item-img" src={recipeUrl} />
+                  <div className="mx-auto">
+                    <div className="iventory-bg d-flex justify-content-center align-items-center">
+                      <img className="item-img" src={recipeUrl} />
+                    </div>
                   </div>
                 );
               }

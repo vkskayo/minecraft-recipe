@@ -13,6 +13,9 @@ export const Query = {
         mcAssets.findItemOrBlockByName(items[recipe[0].result.id - 1].name) !==
           undefined
       ) {
+        if (recipe[0].result.id - 1 == 749) {
+          console.log(recipe[0].inShape);
+        }
         return mcAssets.textureContent[items[recipe[0].result.id - 1].name]
           .texture;
       }

@@ -34,6 +34,7 @@ export function CraftingTable() {
   const [selectedResultedItemId, setSelectedResultedItemId] = useState(0);
   const [loadCraft, { a, b, c }] = useLazyQuery(CRAFTING, {
     onCompleted: (queryData) => {
+      console.log(queryData);
       setCrafts(
         queryData.getCrafts[selectedResultedItemId].inShape
           ? queryData.getCrafts[selectedResultedItemId].inShape
@@ -47,7 +48,7 @@ export function CraftingTable() {
   return (
     <>
       <div className="crafting-table d-flex flex-wrap">
-        {crafts.length > 1 ? (
+        {crafts.length >= 1 ? (
           crafts.map((arr, idx) => {
             if (Array.isArray(arr)) {
               if (arr.length == 1) {

@@ -1,7 +1,3 @@
 import { recipes, items } from "../db.js";
 
-export const Recipe = {
-    resultedItem: ()=>{
-        
-    }
-};
+export const Recipe = {};

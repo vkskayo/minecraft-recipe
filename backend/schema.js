@@ -4,13 +4,13 @@ export const typeDefs = `#graphql
     getOneItem(id: ID!): Item
     items: [Item!]!
     getOneRecipe(id: ID!): [[Int]]
+    getCrafts: [Recipe]
   },
 
   type Recipe {
     resultedItemId: ID!
-    resultedItem: Item!
-    inShape: [[ID!]]!
-    url: String!
+    resultedItem: String
+    inShape: [[String]]
   }
 
   type Item {

@@ -1,10 +1,11 @@
 import "./App.css";
-import { useQuery, gql } from "@apollo/client";
+import { useQuery, gql, useLazyQuery } from "@apollo/client";
 import { useState, useEffect } from "react";
 import { CraftingTable } from "../components/CraftingTable";
 
 function App() {
   const [recipes, setRecipes] = useState([]);
+
   const RECIPES = gql`
     query {
       recipes

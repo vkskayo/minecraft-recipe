@@ -1,8 +1,27 @@
 import { useState, useEffect } from "react";
+import { useQuery, gql, useLazyQuery } from "@apollo/client";
 
 export function CraftingTable() {
+  const CRAFTING = gql`
+    query {
+      getCrafts {
+        resultedItem
+        resultedItemId
+        inShape
+      }
+    }
+  `;
+
+  const [crafts, setCrafts] = useState([]);
   const [inShape, setInshape] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0]);
 
+  const { a, b, c } = useQuery(CRAFTING, {
+    onCompleted: (queryData) => {
+      console.log(queryData);
+      setCrafts(queryData.getCrafts);
+    },
+  });
+  console.log(crafts);
   const arr = [
     [
       "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA00lEQVQ4y31TMQ4CMQzzg9iZ7wFILMxIt/ABZiZ2FsSGeMKtzHysyJVcGRMYfGmTqImdHJ7XfVsuu0b7us9f+Oe/HacGHvQIQefjvBmPZlx35hCoEmWVJOQjvQN+TvO6g2fdD9tVh2I6u58W4sgKyTN9ToUx3j8oKCDreiRV5cP5eQUJWgnpuiC5pgYZzxz4nL1KNfvUo3fgo8t2c4RupREqdavZZ3x04ByrPfCY74QAzTu1UIVqLzwXv3Y82801F+CJ+R/4HlT6DA2Sm+vhmlT78QZ+7nLGaC/6FAAAAABJRU5ErkJggg==",
@@ -20,10 +39,6 @@ export function CraftingTable() {
       "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA00lEQVQ4y31TMQ4CMQzzg9iZ7wFILMxIt/ABZiZ2FsSGeMKtzHysyJVcGRMYfGmTqImdHJ7XfVsuu0b7us9f+Oe/HacGHvQIQefjvBmPZlx35hCoEmWVJOQjvQN+TvO6g2fdD9tVh2I6u58W4sgKyTN9ToUx3j8oKCDreiRV5cP5eQUJWgnpuiC5pgYZzxz4nL1KNfvUo3fgo8t2c4RupREqdavZZ3x04ByrPfCY74QAzTu1UIVqLzwXv3Y82801F+CJ+R/4HlT6DA2Sm+vhmlT78QZ+7nLGaC/6FAAAAABJRU5ErkJggg==",
     ],
   ];
-
-  const emptySquare = (
-    <div className="iventory-bg d-flex justify-content-center align-items-center"></div>
-  );
 
   const addToArray = (arr, remaining) => {
     arr.push(0);

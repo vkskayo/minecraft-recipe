@@ -34,7 +34,6 @@ export function CraftingTable() {
   const [selectedResultedItemId, setSelectedResultedItemId] = useState(0);
   const [loadCraft, { a, b, c }] = useLazyQuery(CRAFTING, {
     onCompleted: (queryData) => {
-      console.log(queryData);
       setCrafts(
         queryData.getCrafts[selectedResultedItemId].inShape
           ? queryData.getCrafts[selectedResultedItemId].inShape
@@ -42,8 +41,6 @@ export function CraftingTable() {
       );
     },
   });
-
-  console.log(crafts);
 
   return (
     <>
@@ -129,16 +126,18 @@ export function CraftingTable() {
           </>
         )}
       </div>
-      <button
-        onClick={() => {
-          setSelectedResultedItemId(selectedResultedItemId + 1);
-          loadCraft();
-        }}
-        className=""
-      >
-        Next Craft
-      </button>
-      <span>current id: {selectedResultedItemId}</span>
+      <div className="my-4 d-flex justify-content-center gap-3 align-items-center">
+        <button
+          onClick={() => {
+            setSelectedResultedItemId(selectedResultedItemId + 1);
+            loadCraft();
+          }}
+          className=""
+        >
+          Next Craft
+        </button>
+        <span>current id: {selectedResultedItemId}</span>
+      </div>
     </>
   );
 }

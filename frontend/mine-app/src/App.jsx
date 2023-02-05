@@ -20,8 +20,6 @@ function App() {
     },
   });
 
-  console.log(recipes);
-
   return (
     <div className="App">
       <nav class="navbar navbar-light bg-light mb-5">
@@ -47,21 +45,24 @@ function App() {
 
       <h1 className="my-4 title">- Recipes</h1>
 
-      <div className="d-flex flex-wrap col-10 mx-auto">
+      <div className="d-flex flex-wrap col-10 mx-auto justify-content-center">
         {recipes
           ? recipes.map((recipeUrl) => {
               if (recipeUrl) {
                 return (
-                  <div className="mx-auto">
-                    <div className="iventory-bg d-flex justify-content-center align-items-center">
-                      <img className="item-img" src={recipeUrl} />
-                    </div>
+                  <div className="iventory-bg d-flex justify-content-center align-items-center hover-effect">
+                    <img className="item-img" src={recipeUrl} />
                   </div>
                 );
               }
             })
           : null}
       </div>
+      <footer className="p-5 mt-5 mx-auto bg-dark">
+        <h4 className="text-center text-light">
+          © vkskayo | This site is not affiliated with Mojang | Contact
+        </h4>
+      </footer>
     </div>
   );
 }

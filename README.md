@@ -1,5 +1,5 @@
 # minecraft-recipe
-I am building a site to display minecraft recipes using minecraft data. Doing it mainly because i want to build something using graphql and apollo.
+
 ```bash
 
 cd frontend
